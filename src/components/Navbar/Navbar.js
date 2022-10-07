@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import BurguerButton from "./BurguerButton";
-import CartWidget from "./cartwidget/CartWidget";
+import BurguerButton from "../BurguerButton/BurguerButton";
+import CartWidget from "../cartwidget/CartWidget";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
@@ -16,10 +17,17 @@ function Navbar() {
           Todo <span>Boca</span>
         </h2>
         <div className={`links ${clicked ? "active" : ""}`}>
-          <a href="">Inicio</a>
-          <a href="">Tienda</a>
-          <a href="">Nosotros</a>
-          <a href="">Contacto</a>
+          <ul>
+            <li>
+              <Link to={"/"}>Inicio</Link>
+            </li>
+            <li>
+              <Link to={"/categoria/:Remera"}>Remeras</Link>
+            </li>
+            <li>
+              <Link to={"/categoria/:Campera"}>Camperas</Link>
+            </li>
+          </ul>
         </div>
         <div>
           <CartWidget />
@@ -47,7 +55,10 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  a {
+  ul {
+    display: flex;
+  }
+  li {
     color: white;
     text-decoration: none;
     margin-right: 1rem;
@@ -59,7 +70,7 @@ const NavContainer = styled.nav`
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    a {
+    li {
       color: #333;
       font-size: 2rem;
       display: block;
