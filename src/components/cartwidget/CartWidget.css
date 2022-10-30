@@ -1,0 +1,14 @@
+.ContainerLogoCart {
+  display: flex;
+}
+
+.ProducstLenght {
+  border-radius: 50%;
+  background-color: white;
+  height: 35%;
+  width: 35%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 2px;
+}

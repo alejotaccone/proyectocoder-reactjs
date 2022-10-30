@@ -1,23 +1,20 @@
 import { Link } from "react-router-dom";
-import Contador from "../Contador/Contador";
-import "./Cards.css";
 
-const onAdd = (cantidad) => {
-  console.log(`${cantidad}`);
-};
+import "./Cards.css";
 
 function Cards({ info }) {
   return (
-    <div>
-      <div class="card ">
-        <img src={info.img} className="card-img-top" alt="card-img-top" />
+    <div className="container">
+      <div className="card ">
+        <img src={info.img} className="card-img-top" alt={info.title} />
         <div className="card-body">
           <h5>{info.title}</h5>
           <p className="price">${info.price}</p>
           <div>
-            <Link to={`/Detail/${info.id}`}> Ver más </Link>
+            <Link className="link" to={`/detail/${info.id}`}>
+              <button className="button">Detalle del producto</button>
+            </Link>
           </div>
-          <Contador initial={1} stock={10} onAdd={onAdd} />
         </div>
       </div>
     </div>

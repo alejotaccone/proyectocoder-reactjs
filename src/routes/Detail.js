@@ -1,4 +1,4 @@
-import ItemDetailContainer from "../components/ItemListContainer/ItemDetailContainer";
+import ItemDetailContainer from "../components/ItemDetalContainer/ItemDetailContainer";
 
 const Detail = () => {
   return (

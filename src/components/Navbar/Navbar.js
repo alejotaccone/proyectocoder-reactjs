@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import BurguerButton from "../BurguerButton/BurguerButton";
 import CartWidget from "../cartwidget/CartWidget";
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
-  console.log(clicked);
+
   const handleClick = () => {
     setClicked(!clicked);
   };
@@ -19,13 +19,16 @@ function Navbar() {
         <div className={`links ${clicked ? "active" : ""}`}>
           <ul>
             <li>
-              <Link to={"/"}>Inicio</Link>
+              <NavLink to={"/"}>Inicio</NavLink>
             </li>
             <li>
-              <Link to={"/categoria/:Remera"}>Remeras</Link>
+              <NavLink to={"/categoria/Remera"}>Remeras</NavLink>
             </li>
             <li>
-              <Link to={"/categoria/:Campera"}>Camperas</Link>
+              <NavLink to={"/categoria/Campera"}>Camperas</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/categoria/Short"}>Shorts</NavLink>
             </li>
           </ul>
         </div>
@@ -62,6 +65,9 @@ const NavContainer = styled.nav`
     color: white;
     text-decoration: none;
     margin-right: 1rem;
+    a {
+      text-decoration: none;
+    }
   }
   .links {
     position: absolute;

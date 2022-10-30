@@ -1,0 +1,23 @@
+.footer {
+  background-color: #333;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 0.5rem;
+}
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-text {
+  color: white;
+  display: flex;
+}
+.footer-text p {
+  padding: 0 5px;
+}
+
+.footer-link {
+  color: #0d6efd;
+  text-decoration: underline;
+}
